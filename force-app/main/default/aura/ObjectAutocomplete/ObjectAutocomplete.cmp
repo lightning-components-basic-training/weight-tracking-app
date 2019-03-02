@@ -1,0 +1,56 @@
+<aura:component>
+    <aura:attribute name="sObjectType" required="true" type="String" description="Name of the sObject that will be filtered" />
+    <aura:attribute name="fields" type="String[]" default="" description="List of fields to get with each record"/>
+    <aura:attribute name="limit" type="Integer" default="10" description="Limits the number of sObjects returned to this value" />
+    <aura:attribute name="inputLabel" type="String" default="Find" description="Label for text input"/>
+    <aura:attribute name="searchFields" type="String[]" default="" description="List of fields our solution should look into" />
+    <aura:attribute name="items" type="sObject[]" default="[]" description="List of results we got from the system" access="private"/>
+    
+    <form >
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="combobox-id-19">{! v.inputLabel }</label>
+            <div class="slds-form-element__control">
+                <div class="slds-combobox_container">
+                <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox" aura:id="lookup">
+                    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                        <input type="text" class="slds-input slds-combobox__input" id="combobox-id-19" aria-autocomplete="list" aria-controls="listbox-id-9" autoComplete="off" role="textbox" placeholder="Search..." onfocus="{!c.showOptions}" onblur="{!c.hideOptions}" onkeyup="{!c.loadOptions}"/>
+                        <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+                            
+                        </span>
+                    </div>
+                    <div id="listbox-id-9" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid" role="listbox">
+                    <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                        <li role="presentation" class="slds-listbox__item">
+                        <div id="option1" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option">
+                            <span class="slds-media__figure slds-listbox__option-icon"></span>
+                            <span class="slds-media__body">
+                            <span class="slds-truncate" title="Burlington Textiles Corp of America"> Burlington Textiles Corp of America</span>
+                            </span>
+                        </div>
+                        </li>
+                        <li role="presentation" class="slds-listbox__item">
+                        <div id="option2" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option">
+                            <span class="slds-media__figure slds-listbox__option-icon"></span>
+                            <span class="slds-media__body">
+                            <span class="slds-truncate" title="Dickenson plc"> Dickenson plc</span>
+                            </span>
+                        </div>
+                        </li>
+                        <li role="presentation" class="slds-listbox__item">
+                        <div id="option3" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option">
+                            <span class="slds-media__figure slds-listbox__option-icon"></span>
+                            <span class="slds-media__body">
+                            <span class="slds-truncate" title="Edge Communications"> Edge Communications</span>
+                            </span>
+                        </div>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+
+</aura:component>
