@@ -15,7 +15,7 @@
     searchResults: function(component, searchCriteria) {
         // get basic attributes
         var searchFields = component.get('v.searchFields');
-        var limit = component.get('v.limit');
+        var queryLimit = component.get('v.limit');
         var retrieveFields = component.get('v.fields');
         var sObjectType = component.get('v.sObjectType');
 
@@ -24,9 +24,10 @@
 
         // set all parameters for the action
         action.setParams({
+            searchCriteria,
             sObjectType,
             searchFields,
-            limit,
+            queryLimit,
             retrieveFields
         });
         let helper = this;
@@ -38,6 +39,14 @@
         $A.enqueueAction(action);
     },
     onSearchResultsCompleted: function(component, response) {
-        console.log(JSON.stringify(response));
+        component.set('v.items', response.getReturnValue());
+    },
+    selectItem: function(component, recordId) {
+        var items = component.get('v.items');
+        var selected = items.find(el => el.Id === recordId);
+        this.emitSelect(component, selected);
+    },
+    emitSelect: function(component, element) {
+        // TODO: Emit a custom "SELECT" event
     }
 })
