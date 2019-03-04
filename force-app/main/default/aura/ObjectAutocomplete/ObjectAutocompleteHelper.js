@@ -7,6 +7,13 @@
         var optionsContainer = component.find('lookup');
         $A.util.removeClass(optionsContainer, 'slds-is-open');
     },
+    processInput: function(component, event) {
+        if (event.keyCode === event.DOM_VK_ESCAPE) {
+            this.hideOptions(component);
+        } else {
+            this.loadOptions(component, event.target.value);
+        }
+    },
     loadOptions: function(component, searchCriteria) {
         if (searchCriteria.length >= 4) {
             this.searchResults(component, searchCriteria);
@@ -45,6 +52,7 @@
         var items = component.get('v.items');
         var selected = items.find(el => el.Id === recordId);
         this.emitSelect(component, selected);
+        this.hideOptions(component);
     },
     emitSelect: function(component, element) {
         var evt = component.getEvent('ObjectAutocompleteSelect');

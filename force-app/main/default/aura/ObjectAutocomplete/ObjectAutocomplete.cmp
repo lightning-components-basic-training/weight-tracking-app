@@ -13,9 +13,9 @@
             <label class="slds-form-element__label" for="combobox-id-19">{! v.inputLabel }</label>
             <div class="slds-form-element__control">
                 <div class="slds-combobox_container">
-                <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox" aura:id="lookup">
+                <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox" aura:id="lookup" >
                     <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
-                        <input type="text" class="slds-input slds-combobox__input" id="combobox-id-19" aria-autocomplete="list" aria-controls="listbox-id-9" autoComplete="off" role="textbox" placeholder="Search..." onfocus="{!c.showOptions}"  onkeyup="{!c.loadOptions}" aura:id="entryField"/>
+                        <input type="text" class="slds-input slds-combobox__input" id="combobox-id-19" aria-autocomplete="list" aria-controls="listbox-id-9" autoComplete="off" role="textbox" placeholder="Search..." onfocus="{!c.showOptions}"  onkeyup="{!c.processInput}" aura:id="entryField" />
                         <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
                             
                         </span>
