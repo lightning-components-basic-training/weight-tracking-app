@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" description="An event fired whenever an element is selected in an ObjectAutocomplete component">
+    <aura:attribute type="Object" required="true" name="selected"></aura:attribute>    
+</aura:event>
+
