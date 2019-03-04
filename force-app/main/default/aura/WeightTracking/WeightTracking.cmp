@@ -6,7 +6,17 @@
     <c:ObjectAutocomplete sObjectType="Contact" searchFields="['FirstName', 'LastName']" limit="20" fields="FirstName,LastName,Email"/>
 
     <aura:if isTrue="{! v.person }">
-        <h1>{! v.person.Name }</h1> 
+        <lightning:tile label="{! v.person.Name}" href="{!'/' + v.person.Id}">
+            <aura:set attribute="media">
+                <lightning:icon iconName="standard:groups"/>
+            </aura:set>
+            <dl class="slds-dl_horizontal">
+                
+                <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                    <p class="slds-truncate" title="{!v.person.Email}">{!v.person.Email}</p>
+                </dd>
+            </dl>
+        </lightning:tile> 
     </aura:if>
 
 </aura:component>

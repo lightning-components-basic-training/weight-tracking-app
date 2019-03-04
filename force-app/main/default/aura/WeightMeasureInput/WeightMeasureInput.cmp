@@ -1,0 +1,13 @@
+<aura:component>
+    <aura:attribute name="personId" type="String" required="true"></aura:attribute>
+    <aura:attribute name="record" type="Object" default="{ sObjectType: 'Weight_Measure__c'}"></aura:attribute>
+
+    <div class="slds-card slds-p-bottom_large slds-p-left_large">
+        <form onsubmit="{!c.saveMeasure}">
+            <div class="slds-text-heading_medium">Enter a new measure</div>
+            <lightning:input name="input1" type="number" label="Enter weight" value="{!v.record.Weight__c}"/>
+             <!-- Brand variant: Identifies the primary action in a group of buttons -->
+            <lightning:button variant="brand" label="Save" title="Save" type="submit" />
+        </form>
+    </div>
+</aura:component>	
