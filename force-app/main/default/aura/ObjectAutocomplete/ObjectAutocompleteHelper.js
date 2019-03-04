@@ -47,6 +47,9 @@
         this.emitSelect(component, selected);
     },
     emitSelect: function(component, element) {
-        // TODO: Emit a custom "SELECT" event
+        var evt = component.getEvent('ObjectAutocompleteSelect');
+
+        evt.setParams({ selected: element });
+        evt.fire();
     }
 })

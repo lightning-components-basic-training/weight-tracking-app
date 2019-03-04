@@ -6,6 +6,8 @@
     <aura:attribute name="searchFields" type="String[]" default="" description="List of fields our solution should look into" />
     <aura:attribute name="items" type="sObject[]" default="[]" description="List of results we got from the system" access="private"/>
     
+    <aura:registerEvent name="ObjectAutocompleteSelect" type="c:ObjectAutocompleteSelect"/>
+
     <form >
         <div class="slds-form-element">
             <label class="slds-form-element__label" for="combobox-id-19">{! v.inputLabel }</label>
