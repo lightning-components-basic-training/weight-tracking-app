@@ -17,6 +17,8 @@
                 </dd>
             </dl>
         </lightning:tile> 
+
+        
     </aura:if>
 
 </aura:component>
